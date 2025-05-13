@@ -19,7 +19,7 @@ export const Navbar = () => {
 
   return (
     <HeroUINavbar
-      isBordered
+      className="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-700"
       maxWidth="xl"
       position="sticky"
       onMenuOpenChange={setIsMenuOpen}
@@ -32,13 +32,15 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Logo />
-            <p className="font-bold text-inherit">Kevin Aguilera</p>
+            <p className="font-serif font-bold text-xl text-blog-title">
+              Kevin Aguilera
+            </p>
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden basis-4/5 sm:basis" justify="end">
-        <ul className="hidden lg:flex gap-4 justify-start ml-2">
+      <NavbarContent className="hidden sm:flex basis-4/5" justify="end">
+        <ul className="lg:flex gap-4 justify-start ml-2 space-x-4">
           <NavItems items={siteConfig.navItems} />
         </ul>
       </NavbarContent>

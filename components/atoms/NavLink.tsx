@@ -1,6 +1,4 @@
 import NextLink from "next/link";
-import clsx from "clsx";
-import { link as linkStyles } from "@heroui/theme";
 
 type NavLinkProps = {
   href: string;
@@ -8,11 +6,9 @@ type NavLinkProps = {
   isActive?: boolean;
 };
 
-export const NavLink = ({ href, label, isActive = false }: NavLinkProps) => (
+export const NavLink = ({ href, label }: NavLinkProps) => (
   <NextLink
-    className={clsx(linkStyles({ color: "foreground" }), {
-      "text-primary font-medium": isActive,
-    })}
+    className="text-blog-body hover:text-blog-accent transition-colors"
     href={href}
   >
     {label}
